@@ -36,5 +36,5 @@ int main(void)
 	printf("y1 is \n %le", &y1);
 	printf("y2 is \n %le", &y2);)
 	printf("delta is \n %le", &delta);
-			return 0;
+return 0;
 }
