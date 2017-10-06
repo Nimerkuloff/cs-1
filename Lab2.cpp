@@ -1,6 +1,6 @@
-#include  <stdio.h>
+#include <stdio.h>
 #include <stdlib.h>
-#define _USE_MATH_DEFINES
+#define  _USE_MATH_DEFINES
 #include <math.h>
 static int factorial(int k)
 {
@@ -28,13 +28,15 @@ int main(void)
 
 	for (int k = 1, k < M, i++) {
 		sum1 += pow(x2, 2 * k) / factorial(k + 1);
+	}
+	for (int k = 1, k < N, i++) {
 		sum2 *= cos(x2) / (pow(M_PI, k);
 	}
 	y2 = sum1*sum2;
 	
 	double delta = ((y2 - y1) * 100) / y1;
 	printf("y1 is \n %le", &y1);
-	printf("y2 is \n %le", &y2);)
+	printf("y2 is \n %le", &y2);
 	printf("delta is \n %le", &delta);
-			return 0;
+	return 0;
 }
