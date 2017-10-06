@@ -1,11 +1,7 @@
-﻿  stdafx.cpp
-  Labrabota2.cpp
+﻿  Labrabota2.cpp
 c:\users\nikita\documents\github\nstu-tasks-1\labrabota 2\labrabota 2\labrabota2.cpp(17): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
   c:\program files (x86)\windows kits\10\include\10.0.15063.0\ucrt\stdio.h(1272): note: see declaration of 'scanf'
 c:\users\nikita\documents\github\nstu-tasks-1\labrabota 2\labrabota 2\labrabota2.cpp(18): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
   c:\program files (x86)\windows kits\10\include\10.0.15063.0\ucrt\stdio.h(1272): note: see declaration of 'scanf'
-c:\users\nikita\documents\github\nstu-tasks-1\labrabota 2\labrabota 2\labrabota2.cpp(39): warning C4477: 'printf' : format string '%le' requires an argument of type 'double', but variadic argument 1 has type 'double *'
-c:\users\nikita\documents\github\nstu-tasks-1\labrabota 2\labrabota 2\labrabota2.cpp(40): warning C4477: 'printf' : format string '%le' requires an argument of type 'double', but variadic argument 1 has type 'double *'
-c:\users\nikita\documents\github\nstu-tasks-1\labrabota 2\labrabota 2\labrabota2.cpp(41): warning C4477: 'printf' : format string '%le' requires an argument of type 'double', but variadic argument 1 has type 'double *'
   Labrabota 2.vcxproj -> C:\Users\Nikita\Documents\GitHub\nstu-tasks-1\Labrabota 2\Debug\Labrabota 2.exe
   Labrabota 2.vcxproj -> C:\Users\Nikita\Documents\GitHub\nstu-tasks-1\Labrabota 2\Debug\Labrabota 2.pdb (Partial PDB)
