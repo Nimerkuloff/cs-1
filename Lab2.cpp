@@ -1,5 +1,7 @@
 #include  <stdio.h>
-#
+#include <stdlib.h>
+#define _USE_MATH_DEFINES
+#include <math.h>
 static int factorial(int k)
 {
 	return (k < 2) ? 1 : k * factorial(k - 1);
@@ -10,10 +12,9 @@ int main(void)
 	double x1, x2, y1 = 0, y2 = 0, sum1=0, sum2=1;
 	const M = 10, N = 15;
 	
-	//Blet isprav output na input
-	//dobavit' output dlya y1 y2 delta
-	scanf("¬веди значение аргумента первого уравнени€\n %le",&x1);
-	scanf("¬веди значение аргумента второго уравнени€\n %le",&x2);
+	
+	scanf("Input x1\n %le",&x1);
+	scanf("Input x2\n %le",&x2);
 
 	if (x1<M_PI/6){
 		y1 = pow(x1, 2);
@@ -32,12 +33,8 @@ int main(void)
 	y2 = sum1*sum2;
 	
 	double delta = ((y2 - y1) * 100) / y1;
-
-
-
-
-
-
-
-		return 0;
+	printf("y1 is \n %le", &y1);
+	printf("y2 is \n %le", &y2);)
+	printf("delta is \n %le", &delta);
+			return 0;
 }
