@@ -1,2 +1,1 @@
-﻿  Labrabota3.vcxproj -> C:\Users\Nikita\Documents\GitHub\nstu-tasks-1\Labrabota3\Debug\Labrabota3.exe
-  Labrabota3.vcxproj -> C:\Users\Nikita\Documents\GitHub\nstu-tasks-1\Labrabota3\Debug\Labrabota3.pdb (Partial PDB)
+﻿cl : Command line error D8016: '/ZI' and '/GL' command-line options are incompatible
