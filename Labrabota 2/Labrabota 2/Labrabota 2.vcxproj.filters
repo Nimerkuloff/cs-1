@@ -32,5 +32,8 @@
     <ClCompile Include="Labrabota2.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Labrabota2-2.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
