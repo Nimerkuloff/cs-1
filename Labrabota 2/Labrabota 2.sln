@@ -5,6 +5,11 @@ VisualStudioVersion = 15.0.26730.16
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Labrabota 2", "Labrabota 2\Labrabota 2.vcxproj", "{8F0D34B1-61C4-4297-856F-192DABBD63EB}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{361DDC27-F123-4F17-9A7C-010AF0A3B4E2}"
+	ProjectSection(SolutionItems) = preProject
+		Labrabota 2\Labrabota2-2.cpp = Labrabota 2\Labrabota2-2.cpp
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64

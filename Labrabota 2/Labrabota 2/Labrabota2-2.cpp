@@ -2,10 +2,11 @@
 #include <stdlib.h>
 #include "stdafx.h"
 #include <math.h>
-int main(void)
+#pragma hdrstop
+int main2(void)
 {
 	int number, sum = 0;
-	scanf("Input number \n%i", &number)
+	scanf("Input number \n%3i", &number);
 
 		while (number != 0) {
 			sum += number % 10;
@@ -15,5 +16,6 @@ int main(void)
 	if ((pow(number, 2) == (sum))) {
 		printf("Are equivalent");
 	}
+		//system("PAUSE");
 	return 0;
 }
