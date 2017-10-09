@@ -11,7 +11,7 @@ int main()
   int array[A] = {}, box, counter = 1, counterMax = 0, counterMaxMeta = 0, j = 0;
 	
 for (int i = 0; i < A; i++) {
-	scanf("%i", &array[i]);
+	scanf("%u", &array[i]);
 }
 	box = array[0] + 1;
 	for (j = 0; j < A;j++) {
