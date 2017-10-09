@@ -1,8 +1,0 @@
-﻿  stdafx.cpp
-  Labrabota2.cpp
-c:\repositories\nstu-task-1\labrabota 2\labrabota 2\labrabota2.cpp(17): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-  c:\program files (x86)\windows kits\10\include\10.0.15063.0\ucrt\stdio.h(1272): note: see declaration of 'scanf'
-c:\repositories\nstu-task-1\labrabota 2\labrabota 2\labrabota2.cpp(18): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-  c:\program files (x86)\windows kits\10\include\10.0.15063.0\ucrt\stdio.h(1272): note: see declaration of 'scanf'
-  Labrabota 2.vcxproj -> C:\repositories\nstu-task-1\Labrabota 2\Debug\Labrabota 2.exe
-  Labrabota 2.vcxproj -> C:\repositories\nstu-task-1\Labrabota 2\Debug\Labrabota 2.pdb (Partial PDB)
