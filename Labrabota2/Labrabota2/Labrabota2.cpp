@@ -15,7 +15,7 @@ int main(void)
 	double x1, x2, y1 = 0, y2 = 0, sum1 = 0, sum2 = 1, delta=0;
 
 	scanf("Input x1\n %le", &x1);
-	scanf("Input x2\n %le", &x2);
+	scanf("input x2\n %le", &x2);
 
 	if (x1<M_PI / 6) {
 		y1 = pow(x1, 2);
