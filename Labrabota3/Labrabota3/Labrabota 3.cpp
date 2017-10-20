@@ -1,5 +1,4 @@
-// Labrabota3.cpp : Defines the entry point for the console application.
-
+//Program finds max length of a repeated numbers sequences (for a given array) 
 #include "stdafx.h"
 #include <stdio.h>
 #include <stdlib.h>
