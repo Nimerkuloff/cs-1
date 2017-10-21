@@ -8,18 +8,15 @@ int main()
 	int counter = 1, max = 0;
 	const int A = 10;
 	int array[A] = {};
-	for (int i = 0; i < A; i++) {
+	scanf("%u", &array[0]);
+	for (int i = 1; i <= A; i++) {
 		scanf("%u", &array[i]);
-		if(i != 0) {
-			while (array[i] == array[i - 1]) {
-				counter++;
-				i++;
-			}
-			if (counter >= max) {
-				max = counter;
-				counter = 1;
-			}
+		if (array[i - 1] == array[i]) {
+			counter++;
+			if (counter >= max) { max = counter; }
+			else { counter = 1; }
 		}
+
 	}
 	printf("Answer is %i\n", max);
 	system("PAUSE");

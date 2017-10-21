@@ -1,10 +1,11 @@
+#include "stdafx.h"
 #include <stdio.h>
 #include <stdlib.h>
-#include "stdafx.h"
 #define  _USE_MATH_DEFINES
 #define M 10
 #define N 15
 #include <math.h>
+#pragma hdrstop
 static int factorial(int k)
 {
 	return (k < 2) ? 1 : k * factorial(k - 1);
@@ -13,9 +14,10 @@ static int factorial(int k)
 int main(void)
 {
 	double x1, x2, y1 = 0, y2 = 0, sum1 = 0, sum2 = 1, delta=0;
-
-	scanf("Input x1\n %le", &x1);
-	scanf("input x2\n %le", &x2);
+	printf("x1 is ");
+	scanf("%le", &x1);
+	printf("x2 is ");
+	scanf("%le", &x2);
 
 	if (x1<M_PI / 6) {
 		y1 = pow(x1, 2);
@@ -36,8 +38,9 @@ int main(void)
 	y2 = sum1*sum2;
 
 	delta = ((y2 - y1) * 100) / y1;
-	printf("y1 is \n %le", y1);
-	printf("y2 is \n %le", y2);
-	printf("delta is \n %le", delta);
+	printf("y1 is %le", y1);
+	printf("\ny2 is %le", y2);
+	printf("\ndelta is %le\n", delta);
+	//system("PAUSE");
 	return 0;
 }

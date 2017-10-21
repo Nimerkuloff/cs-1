@@ -29,7 +29,7 @@
     <ClCompile Include="stdafx.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Labrabota32.cpp">
+    <ClCompile Include="Labrabota3-2.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
