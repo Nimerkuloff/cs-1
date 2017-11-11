@@ -1,4 +1,4 @@
-#include "stdafx.h"
+//#include "stdafx.h"
 #include <stdio.h>
 #include <stdlib.h>
 #define  _USE_MATH_DEFINES
@@ -13,7 +13,7 @@ static int factorial(int k)
 
 int main(void)
 {
-	double x1, x2, y1 = 0, y2 = 0, sum1 = 0, sum2 = 1, delta=0;
+	double x1, x2, y1 = 0, y2 = 0, sum = 0, prod = 1, delta=0;
 	printf("x1 is ");
 	scanf("%le", &x1);
 	printf("x2 is ");
@@ -30,12 +30,12 @@ int main(void)
 	}
 
 	for (int k = 1; k < M; k++) {
-		sum1 += pow(x2, 2 * k) / factorial(k + 1);
-	}
+    sum += pow(x2, 2 * k) / factorial(k + 1);
+  }
 	for (int k = 1; k < N; k++) {
-		sum2 *= cos(x2) / (pow(M_PI, k));
+		prod *= cos(x2) / (pow(M_PI, k));
 	}
-	y2 = sum1*sum2;
+	y2 = sum*prod;
 
 	delta = ((y2 - y1) * 100) / y1;
 	printf("y1 is %le", y1);
@@ -43,4 +43,4 @@ int main(void)
 	printf("\ndelta is %le\n", delta);
 	//system("PAUSE");
 	return 0;
-}
+}  

@@ -1,5 +1,5 @@
 //Program finds max length of a repeated numbers sequences (elements of array input manually) 
-#include "stdafx.h"
+//#include "stdafx.h"
 #include <stdio.h>
 #include <stdlib.h>
 #pragma hdrstop

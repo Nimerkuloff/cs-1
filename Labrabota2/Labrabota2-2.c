@@ -1,5 +1,5 @@
 // Labrabota22.cpp : Defines the entry point for the console application.
-#include "stdafx.h"
+//#include "stdafx.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
@@ -18,11 +18,9 @@ int main(void)
 
 		if ((pow(backup, 2) == (pow(sum,3)))) {
 			printf("Are equivalent");
-		system("PAUSE");
+			system("PAUSE");
 		}
-	}
-	else {
-		printf("Try with a valid number next time...\n");
-	}
+		else{printf("sorry...\n");}
+}	else {printf("Try with a valid number next time...\n");}
 	return 0;
-}
+	}
