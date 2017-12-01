@@ -1,4 +1,4 @@
-//#include "stdafx.h"
+#include "stdafx.h"
 #include <stdio.h>
 #include <stdlib.h>
 #define  _USE_MATH_DEFINES
