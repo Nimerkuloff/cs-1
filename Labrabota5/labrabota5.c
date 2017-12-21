@@ -1,7 +1,7 @@
 /*
-Функция прибавления одной строки, умноженной на число, к другой строке.
-Матрица целых чисел.( Динамический массив многомерных данных)
-Прототип функции: int** func(int ** matrix, int m, int n, int n1, int n2, int val);
+Р¤СѓРЅРєС†РёСЏ РїСЂРёР±Р°РІР»РµРЅРёСЏ РѕРґРЅРѕР№ СЃС‚СЂРѕРєРё, СѓРјРЅРѕР¶РµРЅРЅРѕР№ РЅР° С‡РёСЃР»Рѕ, Рє РґСЂСѓРіРѕР№ СЃС‚СЂРѕРєРµ.
+РњР°С‚СЂРёС†Р° С†РµР»С‹С… С‡РёСЃРµР».( Р”РёРЅР°РјРёС‡РµСЃРєРёР№ РјР°СЃСЃРёРІ РјРЅРѕРіРѕРјРµСЂРЅС‹С… РґР°РЅРЅС‹С…)
+РџСЂРѕС‚РѕС‚РёРї С„СѓРЅРєС†РёРё: int** func(int ** matrix, int m, int n, int n1, int n2, int val);
 */
 #include <stdio.h>
 #include <malloc.h>
@@ -14,21 +14,21 @@
 using namespace std;
 void func(int rows, int cols, int n1, int n2, int val) {
 	int **ary;
-	const unsigned int DIM1 = rows;	//строки
-	const unsigned int DIM2 = cols;	//столбцы
-									// создание
-	ary = new int *[DIM1];    // массив указателей 
+	const unsigned int DIM1 = rows;	//СЃС‚СЂРѕРєРё
+	const unsigned int DIM2 = cols;	//СЃС‚РѕР»Р±С†С‹
+									// СЃРѕР·РґР°РЅРёРµ
+	ary = new int *[DIM1];    // РјР°СЃСЃРёРІ СѓРєР°Р·Р°С‚РµР»РµР№ 
 	for (int i = 0; i < DIM1; i++) {
-		ary[i] = new int[DIM2];     // инициализация указателей
+		ary[i] = new int[DIM2];     // РёРЅРёС†РёР°Р»РёР·Р°С†РёСЏ СѓРєР°Р·Р°С‚РµР»РµР№
 	}
-	// работа с массивом
+	// СЂР°Р±РѕС‚Р° СЃ РјР°СЃСЃРёРІРѕРј
 	for (int i = 0; i < DIM1; i++) {
 		for (int j = 0; j < DIM2; j++) {
 			printf("arr[%d][%d]=", i, j);
 			cin >> ary[i][j];
 		}
 	}
-	printf("Before\n");//вывод матрицы до преобразований 
+	printf("Before\n");//РІС‹РІРѕРґ РјР°С‚СЂРёС†С‹ РґРѕ РїСЂРµРѕР±СЂР°Р·РѕРІР°РЅРёР№ 
 	for (int i = 0; i < rows; i++) {
 		for (int j = 0; j < cols; j++) {
 			cout << ary[i][j] << " ";
@@ -36,11 +36,11 @@ void func(int rows, int cols, int n1, int n2, int val) {
 		cout << endl;
 	}
 
-	// прибавление строк
+	// РїСЂРёР±Р°РІР»РµРЅРёРµ СЃС‚СЂРѕРє
 	for (int i = 0; i < DIM2; i++) {
 		ary[n2][i] += ary[n1][i] * val;
 	}
-	printf("After\n");//вывод матрицы после преобразований 
+	printf("After\n");//РІС‹РІРѕРґ РјР°С‚СЂРёС†С‹ РїРѕСЃР»Рµ РїСЂРµРѕР±СЂР°Р·РѕРІР°РЅРёР№ 
 	for (int i = 0; i < rows; i++) {
 		for (int j = 0; j < cols; j++) {
 
