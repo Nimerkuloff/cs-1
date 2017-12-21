@@ -4,79 +4,81 @@
 (например, "aaa bb1bb cc2cc" - "aaa bbaaabb ccbb1bbcc").
 Вывести результат на экран.
 */
+
 #include "stdafx.h"
 #include <stdio.h>
 #include <stdlib.h>
 //#pragma hdrstop
 #include <iostream>
 
-
-
+#include <conio.h>
+#include <string.h>
+#include <string>
 using namespace std;
-int countWords(char *str) {
-	char space = ' ';
-	int numOfSpaces = 0;
-	for (int i = 0; i <= strlen(str); i++) {
-		if (str[i] == space) {
-			numOfSpaces++;
-		}
-	}
-	if (numOfSpaces == 0) {
-		return 1;
-	}
-	else {
-		return numOfSpaces;
-	}
-}
 
-char* selectWordByNumber(int num, char *str) {
-	char *outStr;
-	outStr = (char *)malloc(200 * sizeof(char));
-	char space = ' ';
-	int tabCount = 0;
+
+string selectWordByNumber(int num, string str) {
+	string out;
 	int i = 0;
-	if (num == 1) {
-		while (str[i] != space) {
-			strcpy(outStr, &str[i]);
+	if (num == 1) {//если требуют первое слово
+		while ((str[i] != ' ') && (i != str.size())) {
+			out.insert(i, str.substr(i, 1));
 			i++;
 		}
 	}
-	else if (num>1) {
-		while (tabCount < (num - 1)) {
-			if (str[i] == space) {
-				tabCount++;
-			}
-			i++;
+	else if (num > 1) {//если требуют не первое слово
+		int b = 0; int c = 0;
+		while (b != (num - 1)) {//чтобы найти позицию Н-го слова, ищу позицию (Н-1)-ого пробела
+			c = str.find(" ", c + 1);
+			b++;
 		}
-		i++;
-		while (str[i] != space) {
-			strcpy(outStr, &str[i]);
+
+		while ((str[c + 1] != ' ') && (c != str.size())) {
+			out.insert(i, str.substr(c + 1, 1));
 			i++;
-			outStr++;
+			c++;
 		}
 	}
-	outStr[i + 1] = '\0';
-	return outStr;
+	return out;
+}
+int wordsCount(string str) {
+	int cntr = 0, j = 0;
+	while (j != -1) {
+		j = str.find(' ', j + 1);
+		cntr++;
+	}
+
+	return cntr;
+}
+string doTheJob(string str) {
+	string out;
+	int someSize = 1, g = 0, i_out = 0;
+	for (int i = 0; i <= str.size(); i++) {
+		//раньше здесь был костыль
+		if (isdigit(str[i]) == false) {			//если символ не цифра, то
+			out.insert(i_out, str.substr(i, 1));//поставь на позицию i_out-го элемента выходной строки i-ый элемент входной строки
+			i_out++;
+		}
+		else if ((str[i] - '0') <= wordsCount(str)) {				 //если символ - цифра - Н, то
+			out.insert(i_out, selectWordByNumber(str[i] - '0', str));//возьми слово, которое в исходной строке стоит Н-ным
+			someSize = selectWordByNumber(str[i] - '0', str).size();   //вычисли длину взятого слова
+			i_out += someSize;										 //подправь счетчик для внешней строки(которая отвечает за результат переписывания) 
+		}
+		else { out.insert(i_out, str.substr(i, 1)); i_out++; }       //если символ - цифра, но её величина больше, чем слов в исходной строке, то просто добавь её к внешней строке 
+	}
+	return out;
 }
 
 
-//char doTheJob(char *str) {}
+
 int main()
 {
-	char str;
-	char *pointerToString;
-	cout << "Dai stroku\n";
-	cin >> str;
-
-	pointerToString = &str;
-	//doTheJob(pointerToString);
-	char *out = selectWordByNumber(2, pointerToString);
-	int g = 0;
-	while (out[g] != '\0') {
-		cout << out[g];
-		g++;
-	}
-
+	string s;
+	printf("Dai stroku\n");
+	getline(cin, s);
+	printf("\n");
+	cout << doTheJob(s);
+	printf("\n");
 	return 0;
 
 }
