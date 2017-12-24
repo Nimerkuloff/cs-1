@@ -1,8 +1,8 @@
 /*
-Â ôàéëå õðàíèòñÿ òåêñò èç ïðîèçâîëüíîãî êîëè÷åñòâà ñòðîê (äëèíà êàæäîé ñòðîêè íå áîëåå 80 ñèìâîëîâ).
-Ïðî÷èòàòü ñîäåðæèìîå ôàéëà è çàïèñàòü åãî â ìàññèâ ñòðîê. Âûâåñòè ñòðîêè íà ýêðàí,
-ïðåäâàðèòåëüíî çàìåíèâ çàäàííîå ïîëüçîâàòåëåì ñëîâî (ñ êëàâèàòóðû) íà çàìåíó.
-Îðãàíèçîâàòü îáðàáîòêó îøèáîê è íåêîððåêòíîãî ââîäà.-
+В файле хранится текст из произвольного количества строк (длина каждой строки не более 80 символов).
+Прочитать содержимое файла и записать его в массив строк. Вывести строки на экран,
+предварительно заменив заданное пользователем слово (с клавиатуры) на замену.
+Организовать обработку ошибок и некорректного ввода.
 */
 #pragma once
 #pragma hdrstop
@@ -11,12 +11,13 @@
 #include <stdio.h>
 #include <string.h>
 #include <iostream>
+#include <string>
 #include <stdio.h>
 #include <string.h>
 #include <malloc.h>
 #define STRLEN 81  
 using namespace std;
-char** getData(int* size)//çàïîëíÿþ ìàññèâ ñòðîêàìè èç ôàéëà
+char** getData(int* size)//заполняю массив строками из файла
 {
 	FILE*  file;
 	char** text = NULL;
@@ -58,22 +59,22 @@ int main()
 	char** data;
 	char*  filename;
 	int    i;
-
+	
 	int lines_qty = lines_count();
-
+	
 	data = getData(&lines_qty);
 
-	char chto_menaem[81];
-	char na_chto_menaem[81];
+	char chto_menaem [81];
+	char na_chto_menaem [81];
 	printf("Chto menyaem?\n");
 	cin >> chto_menaem;
 	printf("Na chto menyaem?\n");
 	cin >> na_chto_menaem;
-
+	
 	long sLen;
 	long sPos;
 	char sBuf[1024];
-	for (int i = 0; i < lines_qty; i++) { //çàìåíà âñåõ âõîæäåíèé îäíîé ïîäñòðîêè íà äðóãóþ
+	for (int i = 0; i < lines_qty; i++) { //замена всех вхождений одной подстроки на другую
 		char * s = strstr(data[i], chto_menaem);
 		while (s) {
 			sLen = strlen(data[i]);
@@ -83,13 +84,13 @@ int main()
 			strcat(data[i], na_chto_menaem);
 			strcat(data[i], sBuf);
 			s = strstr(data[i], chto_menaem);
-		}
+		}	
 		printf("%s\n", data[i]);
 	}
+	
 
 
-
-	for (i = 0; i < lines_qty; i++)//óáèðàþ çà ñîáîé
+	for (i = 0; i < lines_qty; i++)//убираю за собой
 		free(data[i]);
 	free(data);
 	return 0;
