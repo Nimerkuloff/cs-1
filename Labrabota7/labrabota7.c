@@ -1,8 +1,8 @@
 /*
-В файле хранится текст из произвольного количества строк (длина каждой строки не более 80 символов).
-Прочитать содержимое файла и записать его в массив строк. Вывести строки на экран,
-предварительно заменив заданное пользователем слово (с клавиатуры) на замену.
-Организовать обработку ошибок и некорректного ввода.
+Р’ С„Р°Р№Р»Рµ С…СЂР°РЅРёС‚СЃСЏ С‚РµРєСЃС‚ РёР· РїСЂРѕРёР·РІРѕР»СЊРЅРѕРіРѕ РєРѕР»РёС‡РµСЃС‚РІР° СЃС‚СЂРѕРє (РґР»РёРЅР° РєР°Р¶РґРѕР№ СЃС‚СЂРѕРєРё РЅРµ Р±РѕР»РµРµ 80 СЃРёРјРІРѕР»РѕРІ).
+РџСЂРѕС‡РёС‚Р°С‚СЊ СЃРѕРґРµСЂР¶РёРјРѕРµ С„Р°Р№Р»Р° Рё Р·Р°РїРёСЃР°С‚СЊ РµРіРѕ РІ РјР°СЃСЃРёРІ СЃС‚СЂРѕРє. Р’С‹РІРµСЃС‚Рё СЃС‚СЂРѕРєРё РЅР° СЌРєСЂР°РЅ,
+РїСЂРµРґРІР°СЂРёС‚РµР»СЊРЅРѕ Р·Р°РјРµРЅРёРІ Р·Р°РґР°РЅРЅРѕРµ РїРѕР»СЊР·РѕРІР°С‚РµР»РµРј СЃР»РѕРІРѕ (СЃ РєР»Р°РІРёР°С‚СѓСЂС‹) РЅР° Р·Р°РјРµРЅСѓ.
+РћСЂРіР°РЅРёР·РѕРІР°С‚СЊ РѕР±СЂР°Р±РѕС‚РєСѓ РѕС€РёР±РѕРє Рё РЅРµРєРѕСЂСЂРµРєС‚РЅРѕРіРѕ РІРІРѕРґР°.
 */
 #pragma once
 #pragma hdrstop
@@ -11,12 +11,13 @@
 #include <stdio.h>
 #include <string.h>
 #include <iostream>
+#include <string>
 #include <stdio.h>
 #include <string.h>
 #include <malloc.h>
 #define STRLEN 81  
 using namespace std;
-char** getData(int* size)//заполняю массив строками из файла
+char** getData(int* size)//Р·Р°РїРѕР»РЅСЏСЋ РјР°СЃСЃРёРІ СЃС‚СЂРѕРєР°РјРё РёР· С„Р°Р№Р»Р°
 {
 	FILE*  file;
 	char** text = NULL;
@@ -58,22 +59,22 @@ int main()
 	char** data;
 	char*  filename;
 	int    i;
-
+	
 	int lines_qty = lines_count();
-
+	
 	data = getData(&lines_qty);
 
-	char chto_menaem[81];
-	char na_chto_menaem[81];
+	char chto_menaem [81];
+	char na_chto_menaem [81];
 	printf("Chto menyaem?\n");
 	cin >> chto_menaem;
 	printf("Na chto menyaem?\n");
 	cin >> na_chto_menaem;
-
+	
 	long sLen;
 	long sPos;
 	char sBuf[1024];
-	for (int i = 0; i < lines_qty; i++) { //замена всех вхождений одной подстроки на другую
+	for (int i = 0; i < lines_qty; i++) { //Р·Р°РјРµРЅР° РІСЃРµС… РІС…РѕР¶РґРµРЅРёР№ РѕРґРЅРѕР№ РїРѕРґСЃС‚СЂРѕРєРё РЅР° РґСЂСѓРіСѓСЋ
 		char * s = strstr(data[i], chto_menaem);
 		while (s) {
 			sLen = strlen(data[i]);
@@ -83,13 +84,13 @@ int main()
 			strcat(data[i], na_chto_menaem);
 			strcat(data[i], sBuf);
 			s = strstr(data[i], chto_menaem);
-		}
+		}	
 		printf("%s\n", data[i]);
 	}
+	
 
 
-
-	for (i = 0; i < lines_qty; i++)//убираю за собой
+	for (i = 0; i < lines_qty; i++)//СѓР±РёСЂР°СЋ Р·Р° СЃРѕР±РѕР№
 		free(data[i]);
 	free(data);
 	return 0;
