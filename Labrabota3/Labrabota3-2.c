@@ -16,6 +16,11 @@ int main()
 	for (int i = 0; i < 15; i++) {
 	scanf("%c", &str_in[i]);
 	}
+	printf("\nYou have inputed: \n");
+	for (int i = 0; i < 15; i++) {
+		printf("%c", str_in[i]);
+	}
+	printf("\n");
 	int i_str_out=0;
 
 	for (int i_str_in = 0; i_str_in<15; i_str_in++) {
@@ -58,13 +63,13 @@ int main()
 			i_str_out++;
 		}
 	}
-	
+	printf("\nOutput is:\n");
 	str_out[i_str_out + 1] = '\0';
 	int g = 0;
 	do {
 		printf("%c", str_out[g]);
 		g++;
 	} while (str_out[g+1] != '\0');
-	printf("\n");
+	printf("\n\n");
 
 }
