@@ -34,9 +34,6 @@ int main()
 	p1 = (char*)malloc(sizeof(char) * 10);
 	p2 = (char*)malloc(sizeof(char) * 10);
 
-	//Немного прибрался
-	free(p1);
-	free(p2);
 
 	//Ввожу первую строку
 	for (int i = 0; i < 10; i++) {
@@ -62,5 +59,8 @@ int main()
 		cout << p2[i];
 	}
 	printf("\n");
+	//Немного прибрался
+	free(p1);
+	free(p2);
 	return 0;
 }

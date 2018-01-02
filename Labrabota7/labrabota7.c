@@ -9,21 +9,30 @@
 #include "stdafx.h"
 #include <stdlib.h>
 #include <stdio.h>
-#include <string.h>
-#include <iostream>
-#include <string>
-#include <stdio.h>
-#include <string.h>
 #include <malloc.h>
 #define STRLEN 81  
 using namespace std;
-char** getData(int* size)//заполняю массив строками из файла
+int lines_count() {
+
+	int lines_count = 0;
+	FILE *myfile;
+	myfile = fopen("hello.txt", "r");
+
+	while (!feof(myfile))
+	{
+		if (fgetc(myfile) == '\n') {
+			lines_count++;
+		}
+	}
+	return lines_count;
+
+	char** getData(int *size)//заполняю массив строками из файла
 {
 	FILE*  file;
 	char** text = NULL;
 	int    last;
 	char   buf[STRLEN];
-	*size = 0;
+	*size =0;
 	file = fopen("hello.txt", "rt");
 	while (fgets(buf, STRLEN, file) != NULL)
 	{
@@ -38,20 +47,7 @@ char** getData(int* size)//заполняю массив строками из �
 	return text;
 }
 
-int lines_count() {
 
-	int lines_count = 0;
-	FILE *myfile;
-	myfile = fopen("hello.txt", "r");
-
-	while (!feof(myfile))
-	{
-		if (fgetc(myfile) == '\n') {
-			lines_count++;
-		}
-	}
-	return lines_count;
-}
 
 int main()
 {
@@ -62,7 +58,7 @@ int main()
 	
 	int lines_qty = lines_count();
 	
-	data = getData(&lines_qty);
+	data = getData(&lines_count);
 
 	char chto_menaem [81];
 	char na_chto_menaem [81];

@@ -31,24 +31,29 @@ double equation(double x) {
 }
 double secant(double a, double b)//метод хорд
 {
+	int iterator = 0;
 	while (fabs(b - a) > eps)
 	{
 		a = b - (b - a) * equation(b) / (equation(b) - equation(a));
 		b = a - (a - b) * equation(a) / (equation(a) - equation(b));
+		iterator++;
 	}
-
+	printf("iterations - %d ", iterator);
 	return b;
 }
 double dichotomy(double a, double b)//метод половинного деления
 {
 	double x;
+	int iterator = 0;
 	while (b - a > eps) {
 		x = (a + b) / 2;
+		iterator++;
 		if (equation(b) * equation(x) < 0)
 			a = x;
 		else
 			b = x;
 	}
+	printf("iterations - %d ", iterator);
 	return (a + b) / 2;
 }
 int main()
