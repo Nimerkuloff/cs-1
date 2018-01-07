@@ -10,7 +10,7 @@
 #include "stdafx.h"
 #include <windows.h>
 #include <iostream>
-#include <string.h>
+
 using namespace std;
 //Преребираю символы из строк. Если они одинаковые, то перевожу их в верхний регистр
 void function(char *str1, char *str2) {
